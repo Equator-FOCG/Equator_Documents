@@ -7,7 +7,7 @@ const config: Config = {
   tagline: 'Looking forward to the arrival of a new era!',
   favicon: 'img/FOCG_Logo.png',
 
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://equator-documents.vercel.app',
   baseUrl: '/',
 
   organizationName: 'Equator-FOCG',
