@@ -10,7 +10,7 @@ export default function Home(): JSX.Element {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <main>
-        <Redirect to="/docs/intro" />
+        <Redirect to="/docs/home/introduction" />
       </main>
     </Layout>
   );

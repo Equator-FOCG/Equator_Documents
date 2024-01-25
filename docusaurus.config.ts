@@ -67,13 +67,17 @@ const config: Config = {
           position: 'left',
           items: [
             {
-              label: 'Basics',
-              to: '/docs/tutorial-basics/create-a-page',
-              activeBasePath: '/docs/tutorial-basics/create-a-page',
+              label: 'Tutorial',
+              to: '/docs/category/-tutorial-',
+              activeBasePath: '/docs/category/-tutorial-',
             },
             {
-              label:  'Extras',
-              to: '/docs/category/tutorial---extras',
+              label:  'Development',
+              to: '/docs/category/%EF%B8%8F-development-',
+            },
+            {
+              label:  'Games',
+              to: '/docs/category/%EF%B8%8F-full-on-chain-games-',
             },
           ],
         },
