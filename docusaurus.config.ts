@@ -83,6 +83,10 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blogs', position: 'left'},
         {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/Equator-FOCG',
           className: 'header-github-link',
           position: 'right',
