@@ -1,0 +1,34 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.📌 Home": {
+    "message": "📌 Home",
+    "description": "The label for category 📌 Home in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.📑 Tutorial ": {
+    "message": "📑 Tutorial ",
+    "description": "The label for category 📑 Tutorial  in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.📑 Tutorial .link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category 📑 Tutorial  in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🛠️ Development ": {
+    "message": "🛠️ Development ",
+    "description": "The label for category 🛠️ Development  in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🛠️ Development .link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category 🛠️ Development  in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🖥️ Full On-chain Games ": {
+    "message": "🖥️ Full On-chain Games ",
+    "description": "The label for category 🖥️ Full On-chain Games  in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.🖥️ Full On-chain Games .link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category 🖥️ Full On-chain Games  in sidebar tutorialSidebar"
+  }
+}

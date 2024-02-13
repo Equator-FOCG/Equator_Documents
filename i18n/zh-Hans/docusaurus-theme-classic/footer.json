@@ -1,0 +1,10 @@
+{
+  "copyright": {
+    "message": "Made with ❤️ by <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/Equator-FOCG\">Equator-FOCG.</a>",
+    "description": "The footer copyright"
+  },
+  "logo.alt": {
+    "message": "Equator Logo",
+    "description": "The alt text of footer logo"
+  }
+}
