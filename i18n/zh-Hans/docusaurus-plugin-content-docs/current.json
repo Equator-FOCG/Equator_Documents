@@ -1,14 +1,14 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "下一个",
     "description": "The label for version current"
   },
   "sidebar.tutorialSidebar.category.📌 Home": {
-    "message": "📌 Home",
+    "message": "📌 主页",
     "description": "The label for category 📌 Home in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.📑 Tutorial ": {
-    "message": "📑 Tutorial ",
+    "message": "📑 教程 ",
     "description": "The label for category 📑 Tutorial  in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.📑 Tutorial .link.generated-index.description": {
@@ -16,7 +16,7 @@
     "description": "The generated-index page description for category 📑 Tutorial  in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.🛠️ Development ": {
-    "message": "🛠️ Development ",
+    "message": "🛠️ 开发工具 ",
     "description": "The label for category 🛠️ Development  in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.🛠️ Development .link.generated-index.description": {
@@ -24,7 +24,7 @@
     "description": "The generated-index page description for category 🛠️ Development  in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.🖥️ Full On-chain Games ": {
-    "message": "🖥️ Full On-chain Games ",
+    "message": "🖥️ 全链游戏分析 ",
     "description": "The label for category 🖥️ Full On-chain Games  in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.🖥️ Full On-chain Games .link.generated-index.description": {
