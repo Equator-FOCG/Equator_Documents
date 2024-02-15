@@ -44,9 +44,9 @@ const config: Config = {
 
   themeConfig: {
     algolia: {
-      appId: "9PEYN0H12D",
-      indexName: "rnboilerplate",
-      apiKey: "983439b6ebef49ed3394ecfa290f1c6a",
+      appId: "KR1R8KFRXY",
+      indexName: "equator-uments",
+      apiKey: "61dd72c1c15e295325d08ff1f9017838",
       contextualSearch: true,
     },
     colorMode: {
