@@ -1,0 +1,8 @@
+{
+  "label": "BOLT",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Introduction to the infrastructure related to Full On-chain Game."
+  }
+}
