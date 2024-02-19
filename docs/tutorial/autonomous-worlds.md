@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Autonomous Worlds
+# Autonomous Worlds 🗺️
 
 The ultimate goal of Full On-chain Game, the 'autonomous world', is another explanation of the ultimate form of the digital world (the last explanation was the 'metaverse' that was over-marketed and became commonplace). The autonomous world, as a shared vision of a beautiful future for humanity, has a strong appeal, and Full On-chain Game, as an important means to achieve this goal, is also highly expected.
 
