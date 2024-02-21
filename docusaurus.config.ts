@@ -77,7 +77,7 @@ const config: Config = {
             },
             {
               label:  'Games',
-              to: '/docs/category/%EF%B8%8F-full-on-chain-games-',
+              to: '/docs/category/%EF%B8%8F-fully-on-chain-games-',
             },
           ],
         },
