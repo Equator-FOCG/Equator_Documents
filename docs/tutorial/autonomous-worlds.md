@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Autonomous Worlds 🗺️
 
-The ultimate goal of Full On-chain Game, the 'autonomous world', is another explanation of the ultimate form of the digital world (the last explanation was the 'metaverse' that was over-marketed and became commonplace). The autonomous world, as a shared vision of a beautiful future for humanity, has a strong appeal, and Full On-chain Game, as an important means to achieve this goal, is also highly expected.
+The ultimate goal of Fully On-chain Game, the 'autonomous world', is another explanation of the ultimate form of the digital world (the last explanation was the 'metaverse' that was over-marketed and became commonplace). The autonomous world, as a shared vision of a beautiful future for humanity, has a strong appeal, and Fully On-chain Game, as an important means to achieve this goal, is also highly expected.
 
 全链游戏的终极目标“自主世界”，是对数字世界终极形态又一次阐述（上一次阐述是被过度营销化后烂大街的“元宇宙”）。自主世界作为人类对美好未来的共同想象，具有很好的号召力，而全链游戏作为实现该目标的重要途径，也被寄予厚望。
 

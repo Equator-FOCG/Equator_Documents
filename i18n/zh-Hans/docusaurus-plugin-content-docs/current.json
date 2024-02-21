@@ -23,12 +23,12 @@
     "message": "5 minutes to learn the most important Docusaurus concepts.",
     "description": "The generated-index page description for category 🛠️ Development  in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.🖥️ Full On-chain Games ": {
+  "sidebar.tutorialSidebar.category.🖥️ Fully On-chain Games ": {
     "message": "🖥️ 全链游戏分析 ",
-    "description": "The label for category 🖥️ Full On-chain Games  in sidebar tutorialSidebar"
+    "description": "The label for category 🖥️ Fully On-chain Games  in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.🖥️ Full On-chain Games .link.generated-index.description": {
+  "sidebar.tutorialSidebar.category.🖥️ Fully On-chain Games .link.generated-index.description": {
     "message": "5 minutes to learn the most important Docusaurus concepts.",
-    "description": "The generated-index page description for category 🖥️ Full On-chain Games  in sidebar tutorialSidebar"
+    "description": "The generated-index page description for category 🖥️ Fully On-chain Games  in sidebar tutorialSidebar"
   }
 }
