@@ -3,15 +3,3 @@ theRunCom:
   title: Maintainer of Equator
   url: https://github.com/theRunCom
   image_url: https://github.com/theruncom.png
-
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
-  url: https://github.com/yangshun
-  image_url: https://github.com/yangshun.png
-
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
