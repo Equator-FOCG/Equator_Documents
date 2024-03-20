@@ -83,11 +83,6 @@ const config: Config = {
         },
         { to: "/blog", label: "📋Blogs", position: "left" },
         {
-          to: "/community",
-          label: "🏠Community",
-          position: "left",
-        },
-        {
           type: "localeDropdown",
           position: "right",
         },
