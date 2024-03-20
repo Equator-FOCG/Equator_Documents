@@ -1,0 +1,8 @@
+{
+  "label": "World Engine",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "全球首个利用 Argus Labs 的创新分片 rollup 架构的链上游戏 SDK。"
+  }
+}

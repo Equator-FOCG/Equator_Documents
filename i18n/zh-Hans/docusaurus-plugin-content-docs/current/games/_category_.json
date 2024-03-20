@@ -1,9 +1,8 @@
 {
-    "label": "🖥️ Fully On-chain Games ",
-    "position": 4,
-    "link": {
-      "type": "generated-index",
-      "description": "5 minutes to learn the most important Docusaurus concepts."
-    }
+  "label": "🖥️ 全链游戏",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "链上游戏分析"
   }
-  
+}

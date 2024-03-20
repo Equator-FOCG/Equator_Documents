@@ -1,8 +1,8 @@
 {
-  "label": "📑 Tutorial ",
+  "label": "📑 教程",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": "关于全链游戏相关知识点的教程。"
   }
 }
