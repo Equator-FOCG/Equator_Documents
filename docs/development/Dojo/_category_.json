@@ -3,6 +3,6 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Introduction to the infrastructure related to Fully On-chain Game."
+    "description": "Dojo provides a developer friendly framework for developing and scaling onchain games and autonomous worlds that are composable, extensible, permissionless and persistent."
   }
 }
