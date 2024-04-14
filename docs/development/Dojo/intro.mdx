@@ -1,3 +1,51 @@
 # Dojo Introduction ⤵️
 
 > 🚀 **This document is continuously being updated...**
+
+## Get Started
+
+Dojo is built around a set of development tools - Katana, Torii and Sozo.
+
+:::info
+
+You can choose one of the following methods!
+
+:::
+
+### Install Dojoup
+
+`dojoup` is dojo development toolchain installer.
+
+```bash
+    curl -L https://install.dojoengine.org | bash
+```
+
+Then run the following command to complete the installation of the tools.
+
+```bash
+    dojoup
+```
+
+### Building from source
+
+**Prerequisites**: You will need the Rust compiler and Cargo, the Rust package manager. The easiest way to install both is with `rustup`.
+
+By using a single Cargo command:
+
+```bash
+    cargo install --git https://github.com/dojoengine/dojo --force sozo katana torii
+```
+
+Or, by manually building from a local copy of the Dojo repository:
+
+```bash
+    # clone the repository
+    git clone https://github.com/dojoengine/dojo.git
+    cd dojo
+    # install Sozo
+    cargo install --path ./bin/sozo --force
+    # install Katana
+    cargo install --path ./bin/katana --force
+    # install Torii
+    cargo install --path ./bin/torii --force
+```
