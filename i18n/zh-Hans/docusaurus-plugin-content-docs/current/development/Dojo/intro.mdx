@@ -17,13 +17,13 @@ Dojo会使用一系列的开发工具 —— Katana, Torii and Sozo.
 `dojoup`是 dojo 开发工具链安装器。
 
 ```bash
-    curl -L https://install.dojoengine.org | bash
+curl -L https://install.dojoengine.org | bash
 ```
 
 然后运行以下的命令完成工具的安装。
 
 ```bash
-    dojoup
+dojoup
 ```
 
 ### 从源码构建
@@ -33,19 +33,19 @@ Dojo会使用一系列的开发工具 —— Katana, Torii and Sozo.
 通过使用单一的 Cargo 命令：
 
 ```bash
-    cargo install --git https://github.com/dojoengine/dojo --force sozo katana torii
+cargo install --git https://github.com/dojoengine/dojo --force sozo katana torii
 ```
 
 或者，从 Dojo 仓库的本地副本手动构建：
 
 ```bash
-    # 克隆仓库
-    git clone https://github.com/dojoengine/dojo.git
-    cd dojo
-    # 安装 Sozo
-    cargo install --path ./bin/sozo --force
-    # 安装 Katana
-    cargo install --path ./bin/katana --force
-    # 安装 Torii
-    cargo install --path ./bin/torii --force
+# 克隆仓库
+git clone https://github.com/dojoengine/dojo.git
+cd dojo
+# 安装 Sozo
+cargo install --path ./bin/sozo --force
+# 安装 Katana
+cargo install --path ./bin/katana --force
+# 安装 Torii
+cargo install --path ./bin/torii --force
 ```

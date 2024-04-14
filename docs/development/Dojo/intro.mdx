@@ -17,13 +17,13 @@ You can choose one of the following methods!
 `dojoup` is dojo development toolchain installer.
 
 ```bash
-    curl -L https://install.dojoengine.org | bash
+curl -L https://install.dojoengine.org | bash
 ```
 
 Then run the following command to complete the installation of the tools.
 
 ```bash
-    dojoup
+dojoup
 ```
 
 ### Building from source
@@ -33,19 +33,19 @@ Then run the following command to complete the installation of the tools.
 By using a single Cargo command:
 
 ```bash
-    cargo install --git https://github.com/dojoengine/dojo --force sozo katana torii
+cargo install --git https://github.com/dojoengine/dojo --force sozo katana torii
 ```
 
 Or, by manually building from a local copy of the Dojo repository:
 
 ```bash
-    # clone the repository
-    git clone https://github.com/dojoengine/dojo.git
-    cd dojo
-    # install Sozo
-    cargo install --path ./bin/sozo --force
-    # install Katana
-    cargo install --path ./bin/katana --force
-    # install Torii
-    cargo install --path ./bin/torii --force
+# clone the repository
+git clone https://github.com/dojoengine/dojo.git
+cd dojo
+# install Sozo
+cargo install --path ./bin/sozo --force
+# install Katana
+cargo install --path ./bin/katana --force
+# install Torii
+cargo install --path ./bin/torii --force
 ```
