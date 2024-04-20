@@ -59,7 +59,7 @@ export function CommunitySection() {
               <i className={classnames(styles.icon, styles.email)}></i>
             </div>
             <div className="card__body">
-              <p>Related queries pop us an email</p>
+              <p>Please related queries pop us an email</p>
             </div>
             <div className="card__footer">
               <CopyToClipboard
