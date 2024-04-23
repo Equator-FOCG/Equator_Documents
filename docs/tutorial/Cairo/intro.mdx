@@ -6,6 +6,26 @@ This tutorial is for `Version 2.6.0`. Please note, there are differences ⚠️ 
 
 :::
 
+## What is Starknet?
+
+Starknet is a Layer-2 network built on top of Ethereum.
+
+Starknet utilizes STARKs (Scalable, Transparent ARgument of Knowledge) as its proof system, enabling the generation of succinct proofs for complex computations, thus greatly reducing the complexity of on-chain verification processes.
+
+Instead of having all the participants of the network to verify all user interactions, only one node, called the prover, executes the programs and generates proofs that the computations were done correctly.
+
+Then, this proof is provided to the Ethereum network where it is verified by smart contracts. The computational requirements of this process are far less than executing the original transaction directly on Ethereum.
+
+This approach allows for increased throughput and reduced transaction costs while preserving Ethereum security.
+
+## What is Cairo?
+
+Cairo is an opensource programming language invented by Starkware. It's a Turing-complete language meant for general-purpose computation. It's a low-level language designed to compile to the Cairo Virtual Machine.
+
+Cairo is tailor-made for creating STARK-based smart contracts. Inspired by Rust, Cairo lets you write contracts safely and conveniently.
+
+Cairo allows you to compute trustworthy values on untrusted machines.
+
 > ## Reference
 >
 > [The Starknet Foundry](https://foundry-rs.github.io/starknet-foundry/index.html)
