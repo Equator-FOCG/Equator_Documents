@@ -7,7 +7,7 @@ const config: Config = {
   tagline: "Looking forward to the arrival of a new era!",
   favicon: "img/FOCG_Logo.png",
 
-  url: "https://equator-documents.vercel.app",
+  url: "https://docs.equatoraw.xyz/",
   baseUrl: "/",
 
   organizationName: "Equator-FOCG",
@@ -48,6 +48,7 @@ const config: Config = {
       indexName: "equator-uments",
       apiKey: "61dd72c1c15e295325d08ff1f9017838",
       contextualSearch: true,
+      searchParameters: {},
     },
     colorMode: {
       defaultMode: "light",
@@ -63,7 +64,8 @@ const config: Config = {
       items: [
         {
           type: "dropdown",
-          label: "📃Docs",
+          label: "Docs",
+          className: "nav-docs",
           position: "left",
           items: [
             {
@@ -81,7 +83,12 @@ const config: Config = {
             },
           ],
         },
-        { to: "/blog", label: "📋Blogs", position: "left" },
+        {
+          to: "/blog",
+          label: "Blogs",
+          position: "left",
+          className: "nav-blogs",
+        },
         {
           type: "localeDropdown",
           position: "right",
