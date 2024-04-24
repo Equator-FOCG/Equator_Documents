@@ -7,7 +7,7 @@ const config: Config = {
   tagline: "Looking forward to the arrival of a new era!",
   favicon: "img/FOCG_Logo.png",
 
-  url: "https://docs.equatoraw.xyz/",
+  url: "https://docs.equatoraw.xyz",
   baseUrl: "/",
 
   organizationName: "Equator-FOCG",
@@ -63,31 +63,25 @@ const config: Config = {
       },
       items: [
         {
-          type: "dropdown",
-          label: "Docs",
-          className: "nav-docs",
+          to: "/docs/overview/home/introduction",
+          label: "Overview",
+          className: "nav-overview",
           position: "left",
-          items: [
-            {
-              label: "📑 Tutorial",
-              to: "/docs/category/-tutorial-",
-              activeBasePath: "/docs/category/-tutorial-",
-            },
-            {
-              label: "🛠️ Development",
-              to: "/docs/category/%EF%B8%8F-development-",
-            },
-            {
-              label: "🖥️ Games",
-              to: "/docs/category/%EF%B8%8F-fully-on-chain-games-",
-            },
-          ],
+          activeBasePath: "/docs/overview",
         },
         {
           to: "/blog",
           label: "Blogs",
           position: "left",
           className: "nav-blogs",
+          activeBasePath: "/blog",
+        },
+        {
+          to: "/docs/development/index",
+          label: "Utils",
+          position: "left",
+          className: "nav-utils",
+          activeBasePath: "/docs/development",
         },
         {
           type: "localeDropdown",
