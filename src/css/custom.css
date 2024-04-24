@@ -5,6 +5,8 @@
  */
 
 /* You can override the default Infima variables here. */
+@import url("https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap");
+
 :root {
   --ifm-color-primary: #12affa;
   --ifm-color-primary-dark: #05a1ec;
@@ -80,10 +82,11 @@
 
 body {
   font-family:
-    FreeMono system-ui,
-    -apple-system,
-    "PingFang SC",
-    "Microsoft YaHei";
+    "Platypi",
+    "Ma Shan Zheng",
+    "Microsoft YaHei",
+    system-ui,
+    -apple-system;
 }
 
 html,
@@ -315,4 +318,8 @@ html[data-theme="dark"] .nav-utils.navbar__link--active:before {
 
 [data-theme="dark"] .header-discord-link:hover::before {
   opacity: 0.8;
+}
+
+.theme-doc-sidebar-item-category {
+  margin-bottom: 30px;
 }
