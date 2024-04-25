@@ -1,0 +1,39 @@
+.GithubLink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    width: 384px;
+    height: 56px;
+    background: var(--ifm-bg-gradient);
+    border: 1px solid #e6e8eb;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin: 1rem 1rem;
+}
+
+.GithubLink:hover {
+    cursor: pointer;
+    box-shadow: 0px 12px 25px rgba(34, 35, 140, 0.07);
+}
+
+.GithubLinkImg {
+    margin: 0 0.7rem -0.3rem 0;
+}
+
+.GithubLinkText {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    color: var(--ifm-text-color);
+}
+
+.GithubLinkText a {
+    text-decoration: none;
+    color: var(--ifm-text-color);
+}
+
+.Card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
