@@ -1,8 +1,0 @@
-{
-  "label": "World Engine",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "The world’s first Gamechain SDK that utilizes Argus Labs’ novel sharded rollup architecture."
-  }
-}

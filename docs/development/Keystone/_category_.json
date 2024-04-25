@@ -1,8 +1,0 @@
-{
-  "label": "Keystone",
-  "position": 5,
-  "link": {
-    "type": "generated-index",
-    "description": "Keystone is a rollup SDK for building onchain games hyper focused on performance and composability above all."
-  }
-}

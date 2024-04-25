@@ -1,18 +1,28 @@
 ---
-sidebar_position: 4
+sidebar_label: Development Architecture
+title: ⛔ Development Architecture
 ---
 
-# Game Architecture ⛔
-
-## ECS
+## 📁 ECS Introduction
 
 [ECS (Entity Component Systems)](https://en.wikipedia.org/wiki/Entity_component_system) improves the flexibility and maintainability of game development by separating logic, data, and entities. This architectural pattern helps reduce code complexity and decoupling, thereby enhancing performance and development efficiency.
 
-1. `Entity`: An entity is a basic object in the game world, such as a character, prop, or scene object. The entity does not contain any data or logic itself, but is a unique identifier that is used to associate components and systems.
+- `Entity`: An entity is a basic object in the game world, such as a character, prop, or scene object. The entity does not contain any data or logic itself, but is a unique identifier that is used to associate components and systems.
 
-2. `Component`: Components are used to store the properties and data of an entity. Each component is responsible for representing a specific feature or function, such as location, speed, or health. Components contain only data and no logic. By combining different components, entities with various functions and characteristics can be easily created.
+- `Component`: Components are used to store the properties and data of an entity. Each component is responsible for representing a specific feature or function, such as location, speed, or health. Components contain only data and no logic. By combining different components, entities with various functions and characteristics can be easily created.
 
-3. `System`: The system is responsible for handling game logic and behavior. Systems perform operations based on the components that the entity owns. For example, a system that handles movement will look for entities with location and speed components and update their locations based on their speed. The system is independent of the entity and component, making the game logic more modular and reusable.
+- `System`: The system is responsible for handling game logic and behavior. Systems perform operations based on the components that the entity owns. For example, a system that handles movement will look for entities with location and speed components and update their locations based on their speed. The system is independent of the entity and component, making the game logic more modular and reusable.
 
-The ECS model helps to address some of the problems with traditional object-oriented programming (OOP) in game development, such as overly deep inheritance hierarchies and difficulties with code reuse. ECS makes the construction of game objects more flexible, and complex behaviours can be easily created by combining different components. Additionally, ECS helps optimize performance, especially when dealing with a large number of game objects. Many modern game engines, such as Unity and Godot, have adopted ECS as their core architecture.
+The ECS model helps to address some of the problems with traditional object-oriented programming (OOP) in game development, such as overly deep inheritance hierarchies and difficulties with code reuse.
 
+ECS makes the construction of game objects more flexible, and complex behaviours can be easily created by combining different components. Additionally, ECS helps optimize performance, especially when dealing with a large number of game objects. Many modern game engines, such as Unity and Godot, have adopted ECS as their core architecture.
+
+## 📁 MVC Introduction
+
+- `Model`: Responsible for handling the data logic of the application, including the acquisition, processing, and storage of data. The model is typically independent of the user interface and can be tested and operated without the view and controller.
+
+- `View`: Responsible for displaying the user interface of the application, presenting data from the model to the user. Views are typically passive and only responsible for displaying data, not directly processing user input.
+
+- `Controller`: Responsible for handling user input and application logic control, translating user operations into operations on the model. The controller implements the features of the application by listening to user input events and calling methods on the model.
+
+The MVC pattern is very common in game development. It can help developers better manage aspects of the game such as logic, interfaces, and data. When designing an MVC game framework, attention needs to be paid to the interaction between the model, view, and controller, as well as performance issues of the framework. With reasonable design and optimization, an efficient, stable, and easy-to-maintain MVC game framework can be created.

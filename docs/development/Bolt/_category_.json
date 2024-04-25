@@ -1,8 +1,0 @@
-{
-  "label": "BOLT",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "A high-performance and composable SVM-based framework for Fully On-chain games and Autonomous Worlds."
-  }
-}

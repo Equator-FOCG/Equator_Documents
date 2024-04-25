@@ -28,12 +28,12 @@ const config: Config = {
         docs: {
           sidebarPath: "./sidebars.ts",
           editUrl:
-            "https://github.com/Equator-FOCG/Equator-Documents/tree/main",
+            "https://github.com/theRunCom/Equator_Documents/tree/main/docs",
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            "https://github.com/Equator-FOCG/Equator-Documents/tree/main",
+            "https://github.com/theRunCom/Equator_Documents/tree/main/blog",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -44,9 +44,9 @@ const config: Config = {
 
   themeConfig: {
     algolia: {
-      appId: "KR1R8KFRXY",
-      indexName: "equator-uments",
-      apiKey: "61dd72c1c15e295325d08ff1f9017838",
+      appId: "30Y37ED4G",
+      indexName: "equatoraw",
+      apiKey: "0d5975e4cd26c4862389320e1fedf5bb",
       contextualSearch: true,
       searchParameters: {},
     },
@@ -77,11 +77,11 @@ const config: Config = {
           activeBasePath: "/blog",
         },
         {
-          to: "/docs/development/index",
+          to: "/docs/utils/home/introduction",
           label: "Utils",
           position: "left",
           className: "nav-utils",
-          activeBasePath: "/docs/development",
+          activeBasePath: "/docs/utils",
         },
         {
           type: "localeDropdown",
