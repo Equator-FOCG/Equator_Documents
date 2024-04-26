@@ -15,7 +15,7 @@ const sidebars: SidebarsConfig = {
   overview: [
     {
       type: "category",
-      label: "📌 Get Started",
+      label: "📌 Getting Started",
       collapsed: false,
       items: ["overview/home/introduction", "overview/home/about"],
     },
@@ -44,7 +44,7 @@ const sidebars: SidebarsConfig = {
   utils: [
     {
       type: "category",
-      label: "📌 Get Started",
+      label: "📌 Getting Started",
       collapsed: false,
       items: ["utils/home/introduction"],
     },
@@ -66,7 +66,10 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "World Engine",
-      items: ["utils/World Engine/intro"],
+      items: [
+        "utils/World Engine/intro",
+        "utils/World Engine/world-starter-kit",
+      ],
     },
     {
       type: "category",
