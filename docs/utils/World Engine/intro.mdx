@@ -3,42 +3,59 @@ sidebar_label: World Engine Introduction
 title: ⤵️ World Engine Introduction
 ---
 
-> 🚀 **This document is continuously being updated...**
-
 > The world’s first Gamechain SDK that utilizes Argus Labs’ novel sharded rollup architecture.
 
-## Getting Started
+```mdx-code-block
 
-### Install dependencies and World CLI
+import { GithubCard } from '@site/src/components/GithubCard';
+import { WebCard } from '@site/src/components/WebCard';
+import styles from "@site/src/components/card.module.css"
 
-import Tabs from '@theme/Tabs';
+<div className={styles.Card}>
+  <WebCard link="https://world.dev/introduction" title="World Engine Documents"/>
+  <GithubCard link="https://github.com/Argus-Labs/world-engine" title="World Engine Repository"/>
+</div>
 
-<Tabs defaultValue="Go" values={[
-  { label: 'Go', value: 'Go', },
-  { label: 'Docker', value: 'Docker', },
-]}>
-
-import TabItem from '@theme/TabItem';
-
-<TabItem value="Go">
-
-```bash
-go version
 ```
 
-</TabItem>
+[World Engine](https://world.dev/introduction) is the **Sharded Rollup Framework for On-chain Game** by the [Argus Labs](https://argus.gg/).
 
-<TabItem value="Docker">
+It is designed to meet the needs of game developers and players, inheriting the security and decentralization features of Layer 1, while allowing game developers to focus on creating game experiences.
 
-```bash
-docker version
-```
+## 🤔 Reconsidering blockchain architecture
 
-</TabItem>
-</Tabs>
+We decided to approach blockchain architecture from a different perspective.
 
-**Install World CLI** (Permission required)
+我们决定从一个不同的角度来看待区块链架构。
 
-```bash
-curl https://install.world.dev/cli! | bash
-```
+We quickly realized that the event-driven nature of traditional blockchains is not compatible with running a game state machine. Therefore, we explored the loop-driven runtime that games use. Game engines are specifically built to support this loop-driven runtime.
+
+我们很快就意识到，传统区块链的事件驱动性质与运行游戏状态机并不兼容。因此，我们探索了游戏使用的循环驱动运行时。游戏引擎就是专门为支持这种循环驱动运行时而构建的。
+
+In loop-driven runtimes, game progressions are referred to as "ticks," which are the atomic units of time. Each game loop is executed in a single tick. The higher the tick rate, the more responsive the game feels. For example, modern games like Counter-Strike or Valorant have high tick rates, making them feel more responsive. In contrast, older games with lower tick rates often feel sluggish.
+
+在循环驱动的运行时中，游戏进程被称为 "ticks"，它们是时间的原子单位。每个游戏循环在一个 tick 中执行。tick rate 越高，游戏感觉越流畅。例如，现代游戏如 Counter-Strike 或 Valorant 有高 tick rate，使得它们感觉更加流畅。相比之下，旧的游戏由于 tick rate 较低，通常感觉比较迟钝。
+
+In the context of blockchain, these ticks can be compared to blocks, which are single units of time where state transitions happen. If a tick or block feels slow, it can negatively impact the gaming experience.
+
+在区块链的背景下，这些 ticks 可以与区块进行比较，区块是状态转换发生的单一时间单位。如果一个 tick 或区块感觉慢，它可能会对游戏体验产生负面影响。
+
+We believe that games are loop-driven in nature because many game state transitions are not triggered by external input. For example, gravity in a game doesn't rely on the user pressing a button; it continues to exist regardless of user input.
+
+我们认为，游戏本质上是循环驱动的，因为许多游戏状态转换并不是由外部输入触发的。例如，游戏中的重力并不依赖用户按下一个按钮；它无论用户输入如何都会存在。
+
+Deterministic transaction ordering is also crucial. For instance, if you want to inflict damage on a user, should the game apply a health regeneration to the user first or inflict damage first? With traditional ordering, you can't predict or control which state transitions are applied first, leading to issues in the game loop.
+
+确定性的交易排序也是至关重要的。例如，如果你想对一个用户造成伤害，游戏应该先对用户进行健康恢复还是先造成伤害？使用传统的排序，你无法预测或控制哪些状态转换先被应用，这会导致游戏循环中的问题。
+
+With a loop-driven blockchain for games, we maintain composability, which is why we want to use blockchain as a runtime for games in the first place. This approach allows for real-time gameplay, blurring the line between a blockchain and a traditional game server. It also enables the development of more complex games than before.
+
+通过循环驱动的区块链，我们保持了可组合性，这就是我们为什么想要使用区块链作为游戏运行时的原因。这种方法允许实时游戏玩，模糊了区块链和传统游戏服务器之间的界限。它还使得开发比以前更复杂的游戏成为可能。
+
+We aim for a user and application-centric roll-up construction.
+
+我们的目标是以用户和应用为中心的 roll-up 构造。
+
+> ## 🔐 Reference
+>
+> [World Engine: Horizontally Scaling Rollups With Shards - Scott Sunarto](https://www.youtube.com/watch?v=lHyQKCVQTPo&t=2548s)
