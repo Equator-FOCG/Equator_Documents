@@ -1,0 +1,67 @@
+---
+sidebar_label: Redstone
+title: ⤵️ Redstone
+---
+
+> A Home For Onchain Worlds 一个专为链上世界打造的家园
+
+```mdx-code-block
+
+import { GithubCard } from '@site/src/components/GithubCard';
+import { WebCard } from '@site/src/components/WebCard';
+import styles from "@site/src/components/card.module.css"
+
+<div className={styles.Card}>
+  <WebCard link="https://redstone.xyz/docs/what-is-redstone" title="Redstone Documents"/>
+  <GithubCard link="https://github.com/latticexyz/redstone" title="Redstone Repository"/>
+</div>
+
+```
+
+## ⁉️ What is Redstone
+
+Redstone runs applications 🔨 on an OP Stack chain optimized for games and onchain worlds. Build with an automatic MUD indexer, edge RPCs, and access to a friendly developer community 🏠.
+
+Redstone 是一个采用OP Stack 开源模块化工具包为游戏和链上世界量身定做的链，从而支持 🔨 应用程序的运行。它配备了智能的 MUD 索引器、远程 RPCs 服务，还打造了一个易于交流的开发者友好社区 🏠，为开发者提供全方位的构建支持。
+
+One big bottleneck to on-chain games before was the amount of data they were able to handle.
+
+之前，链上游戏面临的一个重大问题是它们能处理的数据量有限。
+
+Redstone would operate “like a traditional optimistic rollup, except instead of posting the input state to L1, we post a data commitment hash. The input state corresponding to the input commitment is stored off-chain by a data availability provider.
+
+Redstone的运作方式类似于传统的 OP Rollup，不同之处在于它不是将交易状态上传到主链 (L1)，而是发布一个包含数据承诺的哈希值。与这个数据承诺相对应的交易状态由负责数据保管的服务提供者在链下存储。
+
+We call it alternative data availability, because the transaction data is available off-chain, not on Ethereum. To maintain security with this architecture, that’s why we have the permissionless on-chain DA challenge so that when the data is not available or doesn’t correspond to the data commitment, one can challenge it to be excluded.
+
+我们把这种方法称为替代数据可用性机制，因为交易数据并未存储在以太坊主链上，而是在链下可以被访问。为了确保此种架构下的安全，我们引入了一种无须特殊权限即可发起的链上数据可用性挑战机制。这样一来，如果数据无法获取或者与先前承诺的数据不符，任何人都可以通过这一机制提出挑战，以阻止错误或者恶意的数据被确认。
+
+This means it is an Ethereum blockchain that inherits most security guarantees from L1 (Ethereum mainnet), but has much cheaper transactions.
+
+这表明它是基于以太坊的一种区块链形式，能够保留以太坊主网（L1）的大多数安全特性，同时能提供更低的交易费用。
+
+## ❓ What is the Redstone Bridge
+
+The bridge allows you to transfer assets (currently ETH) between the Holesky testnet and the Redstone Holesky testnet.
+
+这个跨链桥功能让你可以将资产（目前支持以太币 ETH）在 Holesky 测试网络和 Redstone Holesky 测试网络之间进行转移。
+
+:::note
+
+[Redstone Explorer](https://explorer.holesky.redstone.xyz/) and [Redstone Bridge](https://redstone.xyz/deposit)
+
+:::
+
+### What is Holesky
+
+The Holesky testnet was scheduled for launch on September 15, 2023, which will be replacing the Goerli testnet.
+
+Holesky 于 2023 年 9 月 15 日作为最新的以太坊测试网络推出，取代了 Goerli。
+
+It is planned to be the new testing environment for protocol developments, infrastructures, and developments related to consensus staking.
+
+该平台旨在成为一个全新的测试环境，专门用于测试区块链协议的开发、基础架构构建，以及与区块链共识机制中的质押相关的各项开发工作。
+
+> ## 🔐 Reference
+>
+> [Blockchain Developer Lattice Unveils 'Alternative Data Availability' Network for Optimism](https://www.coindesk.com/tech/2023/11/15/blockchain-developer-lattice-unveils-alternative-data-availability-network-for-optimism/)
