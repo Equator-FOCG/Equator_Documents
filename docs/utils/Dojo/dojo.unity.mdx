@@ -1,0 +1,119 @@
+---
+sidebar_label: Dojo.unity
+title: ⤵️ Dojo.unity
+---
+
+> Dojo.unity is the official Unity SDK for interacting with Dojo worlds to develop web and desktop 2D and 3D games.
+
+## ✔️ Prerequisites
+
+- Dojo has been **correctly installed v0.6.0**
+
+- Unity requires **version >= 2022.3.15f1**
+
+- **Download the dojo.unity package:** Visit the [dojo.unity releases page](https://github.com/dojoengine/dojo.unity/releases) and download the latest version of the `dojo.unitypackage`.
+
+## 🚀 Get Started
+
+### 1. Open or Create a Unity Project
+
+Launch Unity and either create a new project or open an existing one where you intend to integrate Dojo.unity.
+
+### 2. Import the Dojo.unity Package
+
+Navigate to `Assets/Import Package/Custom Package` within your Unity project. Choose the downloaded `dojo.unitypackage` file.
+
+![](@site/static/img/Dojo_Unity/unity1.png)
+
+Finally, ensure to check only the aimed platforms for your project.
+
+![](@site/static/img/Dojo_Unity/unity2.png)
+
+> **Warning:** If your project includes the `Plugins/iOS` directory, note that it requires **Git Large File Storage (LFS)** to be uploaded. Refer to [GitHub's documentation on Git LFS](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage) for more information.
+
+### 3. Import Newtonsoft's Json.NET Dependency
+
+In Unity, navigate to `Window/Package Manager`.
+
+![](@site/static/img/Dojo_Unity/unity3.png)
+
+Once the `Package Manager` window opens, select `Add package from git URL`.
+
+![](@site/static/img/Dojo_Unity/unity4.png)
+
+Enter `com.unity.nuget.newtonsoft-json` as the package URL, click `Add` and then `Done` to import the dependency.
+
+![](@site/static/img/Dojo_Unity/unity5.png)
+
+### 4. Setting up Dojo Starter
+
+```bash
+sozo init contracts
+cd contracts
+```
+**Launch Katana** -> Run command in Terminal 1:
+
+```bash
+katana --disable-fee
+```
+
+**Build with Sozo** -> Run command in Terminal 2:
+
+```bash
+scarb run migrate
+```
+
+![](@site/static/img/Dojo_Unity/unity6.png)
+
+**Launch Torii** -> Run command in Terminal:
+
+```bash
+# Replace "World_Address" with the address generated above.
+torii --world World_Address
+
+# torii --world 0x446f1f19ba951b59935df72974f8ba6060e5fbb411ca21d3e3e3812e3eb8df8
+```
+
+### 5. Try the example
+
+Download the [Spawn And Move](https://github.com/dojoengine/dojo.unity/tree/main/Assets/Spawn%20And%20Move) example to the Unity project's Asset folder.
+
+:::note
+
+Use [DownGit](https://minhaskamal.github.io/DownGit/#/home) to download Github repo folder.
+
+:::
+
+1. Open the scene: In the `Project tab`, navigate to `Assets/Spawn And Move/Scenes/Sample scene`
+
+2. Adjusting Scriptable Objects:
+
+    - Verify that the `player address` and `player private` key (Scarb.toml) in `Assets/Spawn And Move/Dojo5.0Data` match the output of the Katana terminal.
+
+    ![](@site/static/img/Dojo_Unity/unity7.png)
+
+    ![](@site/static/img/Dojo_Unity/unity8.png)
+
+    - Verify that the `world address` in the Scriptable Object located at `Assets/Dojo/Runtime/Config/WorldManagerLocalConfig` matches the output of the Sozo migrate command.
+
+    ![](@site/static/img/Dojo_Unity/unity9.png)
+
+    - Verify that the `Contract address` in the `WorldManager` matches the output of the Sozo migrate command.
+
+    ![](@site/static/img/Dojo_Unity/unity11.png)
+
+    ![](@site/static/img/Dojo_Unity/unity10.png)
+
+3. Running the example
+
+   - Play the opened scene.
+
+   - To spawn an entity, press the space key.
+
+   - To move the entity, use the keys: a (left), w (forward), s (backward), d (right).
+
+   > You can create multiple entities by pressing the space key. To select an entity for movement, simply right-click on it.
+
+> ## 🔐 Reference
+>
+> [Dojo.unity – Dojo Book](https://book.dojoengine.org/client/sdk/unity/overview)
