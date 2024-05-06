@@ -31,7 +31,10 @@ const sidebars: SidebarsConfig = {
         {
           type: "category",
           label: "Cairo",
-          items: ["overview/tutorial/Cairo/intro"],
+          items: [
+            "overview/tutorial/Cairo/intro",
+            "overview/tutorial/Cairo/starknet_foundry",
+          ],
         },
       ],
     },
@@ -51,12 +54,12 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Mud",
-      items: ["utils/Mud/intro"],
+      items: ["utils/Mud/intro", "utils/Mud/Redstone"],
     },
     {
       type: "category",
       label: "Dojo",
-      items: ["utils/Dojo/intro"],
+      items: ["utils/Dojo/intro", "utils/Dojo/dojo.unity"],
     },
     {
       type: "category",
