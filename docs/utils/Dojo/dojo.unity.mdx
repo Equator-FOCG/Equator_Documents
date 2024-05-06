@@ -45,19 +45,80 @@ Enter `com.unity.nuget.newtonsoft-json` as the package URL, click `Add` and 
 
 ![](@site/static/img/Dojo_Unity/unity5.png)
 
-### 4. Setting up Dojo Starter
+## ✊ Try the example
+
+### 1. Set up Unity Scene
+
+Create a new folder named `Spawn And Move` under the `Assets` folder.
+
+Download Assets and import them in the `Spawn And Move/Assets` folder: [Free Scavenger](https://assetstore.unity.com/packages/3d/characters/humanoids/humans/free-scavenger-261065#content) and [Old Sea Port - Environment](https://assetstore.unity.com/packages/3d/environments/old-sea-port-environment-36897).
+
+![](@site/static/img/Dojo_Unity/unity12.png)
+
+Open the `Dock Thing` scene from `Old Sea Port/scenes` folder and save it in the `Spawn And Move/Scenes` folder.
+
+Put the `Scavenger Variant` prefab from `Homeless_people/Free_Scavenger/Prefab` folder.
+
+Delete the `Trailer Camera` and unpack the `Scavenger Variant` prefab.
+
+![](@site/static/img/Dojo_Unity/unity13.png)
+
+Create the camera, put it in the `Scavenger Variant`.
+
+![](@site/static/img/Dojo_Unity/unity14.png)
+
+Adjust the camera position.
+
+![](@site/static/img/Dojo_Unity/unity15.png)
+
+Adjust the lighting parameters to prevent the character from looking too dark. In the `Window -> Rendering -> Lighting` menu, open the Lighting Settings panel. Make sure the **Intensity Multiplier** value for Environment Lighting is appropriate.
+
+![](@site/static/img/Dojo_Unity/unity16.png)
+
+### 2. Add Essential Prefabs
+
+In your Unity project, navigate to the scene where you want to integrate the Dojo SDK.
+
+Locate the `Assets/Dojo/Prefabs` folder. Drag the **WorldManager** prefab into your scene.
+
+:::note
+
+The **WorldManager** is the central hub for organizing and controlling entities within your Dojo world in Unity.
+
+:::
+
+Locate the `Assets/Dojo/Runtime` folder and drag the **UnityMainThreadDispatcher** prefab into your scene.
+
+:::note
+
+The **UnityMainThreadDispatcher** is for asynchronous calls to the Dojo systems.
+
+:::
+
+### 3. Configure the World Manager
+
+The World Manager operates with a default configuration called WorldManagerDataLocalConfig, residing in `Dojo/Runtime/Config`.
+
+We can create custom configurations. In the Project window, right-click and choose `Create > ScriptableObjects > WorldManagerData`. Customize the configuration values within this new ScriptableObject instance.
+
+![](@site/static/img/Dojo_Unity/unity17.png)
+
+To use a specific configuration, locate the `WorldManager` game object in your scene. Drag the desired ScriptableObject (either the default one or your custom configuration) onto the DojoConfig field within the WorldManager component.
+
+### 4. Set up Dojo Starter
 
 ```bash
 sozo init contracts
 cd contracts
 ```
-**Launch Katana** -> Run command in Terminal 1:
+
+Launch Katana(Run command in Terminal 1):
 
 ```bash
 katana --disable-fee
 ```
 
-**Build with Sozo** -> Run command in Terminal 2:
+Build with Sozo(Run command in Terminal 2):
 
 ```bash
 scarb run migrate
@@ -65,7 +126,7 @@ scarb run migrate
 
 ![](@site/static/img/Dojo_Unity/unity6.png)
 
-**Launch Torii** -> Run command in Terminal:
+Launch Torii(Run command in Terminal):
 
 ```bash
 # Replace "World_Address" with the address generated above.
@@ -74,45 +135,152 @@ torii --world World_Address
 # torii --world 0x446f1f19ba951b59935df72974f8ba6060e5fbb411ca21d3e3e3812e3eb8df8
 ```
 
-### 5. Try the example
+### 5. Add the Scripts
 
-Download the [Spawn And Move](https://github.com/dojoengine/dojo.unity/tree/main/Assets/Spawn%20And%20Move) example to the Unity project's Asset folder.
+Create a new folder named `Scripts` under the `Spawn And Move` folder.
 
-:::note
+Automate the creation of C# bindings (components and contracts) for your Unity world.
 
-Use [DownGit](https://minhaskamal.github.io/DownGit/#/home) to download Github repo folder.
+```bash
+# Specify a custom output directory
+sozo build --unity --bindings-output ../Assets/Spawn\ And\ Move/Scripts
+```
 
-:::
+Create `GameManagerData.cs`, which is a ScriptableObject script file.
 
-1. Open the scene: In the `Project tab`, navigate to `Assets/Spawn And Move/Scenes/Sample scene`
+```csharp
+using UnityEngine;
 
-2. Adjusting Scriptable Objects:
+namespace Spawn_And_Move.Scripts
+{
+    [CreateAssetMenu(fileName = "GameManagerData", menuName = "ScriptableObjects/GameManagerData", order = 2)]
+    public class GameManagerData : ScriptableObject
+    {
+        public string masterPrivateKey;
+        public string masterAddress;
+    }
+}
+```
 
-    - Verify that the `player address` and `player private` key (Scarb.toml) in `Assets/Spawn And Move/Dojo5.0Data` match the output of the Katana terminal.
+In the Project window, right-click and choose `Create > ScriptableObjects > GameManagerData`.
 
-    ![](@site/static/img/Dojo_Unity/unity7.png)
+Create `GameManager.cs`, which is responsible for handling the core logic of the game.
 
-    ![](@site/static/img/Dojo_Unity/unity8.png)
+```csharp
+using System.Collections.Generic;
+using Dojo;
+using Dojo.Starknet;
+using UnityEngine;
 
-    - Verify that the `world address` in the Scriptable Object located at `Assets/Dojo/Runtime/Config/WorldManagerLocalConfig` matches the output of the Sozo migrate command.
+namespace Spawn_And_Move.Scripts
+{
+    public class GameManager : MonoBehaviour
+    {
+        [SerializeField] WorldManager worldManager;
+        [SerializeField] WorldManagerData dojoConfig;
+        [SerializeField] GameManagerData gameManagerData;
 
-    ![](@site/static/img/Dojo_Unity/unity9.png)
+        public GameObject player;
+        public Actions actions;
+        private JsonRpcClient provider;
+        private Account account;
+        private Dictionary<FieldElement, string> spawnedAccounts = new();
 
-    - Verify that the `Contract address` in the `WorldManager` matches the output of the Sozo migrate command.
+        void Start()
+        {
+            provider = new JsonRpcClient(dojoConfig.rpcUrl);
+            var signer = new SigningKey(gameManagerData.masterPrivateKey);
+            account = new Account(provider, signer, new FieldElement(gameManagerData.masterAddress));
+            worldManager.synchronizationMaster.OnEntitySpawned.AddListener(InitEntity);
+            foreach (var entity in worldManager.Entities())
+            {
+                InitEntity(entity);
+            }
+        }
 
-    ![](@site/static/img/Dojo_Unity/unity11.png)
+        async void Update()
+        {
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                spawnedAccounts[account.Address] = null;
+                var txHash = await actions.Spawn(account);
+            }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                Move(Direction.Down);
+            }
+            else if (Input.GetKeyDown(KeyCode.A))
+            {
+                Move(Direction.Left);
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                Move(Direction.Up);
+            }
+            else if (Input.GetKeyDown(KeyCode.D))
+            {
+                Move(Direction.Right);
+            }
+        }
 
-    ![](@site/static/img/Dojo_Unity/unity10.png)
+        private async void Move(Direction direction)
+        {
+            await actions.Move(account, direction);
+        }
 
-3. Running the example
+        private void InitEntity(GameObject entity)
+        {
+            player.transform.parent = entity.transform;
+            foreach (var account in spawnedAccounts)
+            {
+                if (account.Value == null)
+                {
+                    spawnedAccounts[account.Key] = entity.name;
+                    break;
+                }
+            }
+        }
+    }
+}
+```
 
-   - Play the opened scene.
+Drag the `GameManager.cs` and `action.gen.cs` into the `WorldManager` game object's Hierarchy tab.
 
-   - To spawn an entity, press the space key.
+![](@site/static/img/Dojo_Unity/unity18.png)
 
-   - To move the entity, use the keys: a (left), w (forward), s (backward), d (right).
+![](@site/static/img/Dojo_Unity/unity19.png)
 
-   > You can create multiple entities by pressing the space key. To select an entity for movement, simply right-click on it.
+Drag the configurations into `Game Manager(Script)`.
+
+![](@site/static/img/Dojo_Unity/unity20.png)
+
+### 6. Adjust Scriptable Objects
+
+Verify that the `player address` and `player private` key (Scarb.toml) in `GameManagerData` match the output of the Katana terminal.
+
+![](@site/static/img/Dojo_Unity/unity7.png)
+
+![](@site/static/img/Dojo_Unity/unity8.png)
+
+Verify that the `world address` in the Scriptable Object located at `WorldManagerData`(depending on whether you are using the default configuration or a custom one) matches the output of the Sozo migrate command.
+
+![](@site/static/img/Dojo_Unity/unity9.png)
+
+Verify that the `Contract address` in the `WorldManager` matches the output of the Sozo migrate command.
+
+![](@site/static/img/Dojo_Unity/unity11.png)
+
+![](@site/static/img/Dojo_Unity/unity10.png)
+
+### 7.
+
+### 8. Running the example
+
+Play the opened scene.
+
+To spawn a account, press the `space` key.
+
+To move the entity, use the keys: `a (left)`, `w (forward)`, `s (backward)`, `d (right)`.
 
 > ## 🔐 Reference
 >
